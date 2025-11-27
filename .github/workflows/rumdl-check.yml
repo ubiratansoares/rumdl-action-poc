@@ -1,0 +1,26 @@
+# Copyright 2025 Dotanuki Labs
+# SPDX-License-Identifier: MIT
+
+name: rumdl-check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2022]
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v6.0.0
+
+      - name: Lint with rumdl
+        uses: ubiratansoares/rumdl@ufs/rumdl-action
