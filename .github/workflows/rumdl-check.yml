@@ -33,7 +33,7 @@ jobs:
       - name: Lint with rumdl
         uses: ubiratansoares/rumdl@ufs/rumdl-action
         with:
-          report-type: workflow-annotation
+          report-type: workflow-annotations
 
   lint-code-scanning:
     runs-on: macos-15
@@ -47,6 +47,7 @@ jobs:
           report-type: sarif-file
 
       - name: Upload results to Github Code Scanning
+        if: failure()
         uses: github/codeql-action/upload-sarif@v3.31.2
         with:
           sarif_file: ${{ github.workspace}}/rumdl.sarif
