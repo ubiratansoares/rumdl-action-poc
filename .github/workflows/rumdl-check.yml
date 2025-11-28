@@ -35,7 +35,7 @@ jobs:
         with:
           report-type: workflow-annotations
 
-  lint-code-scanning:
+  lint-invalid-report:
     runs-on: macos-15
     steps:
       - name: Project Checkout
@@ -44,10 +44,4 @@ jobs:
       - name: Lint with rumdl
         uses: ubiratansoares/rumdl@ufs/rumdl-action
         with:
-          report-type: sarif-file
-
-      - name: Upload results to Github Code Scanning
-        if: failure()
-        uses: github/codeql-action/upload-sarif@v3.31.2
-        with:
-          sarif_file: ${{ github.workspace}}/rumdl.sarif
+          report-type: sarif
