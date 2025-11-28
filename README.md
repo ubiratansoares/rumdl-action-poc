@@ -15,3 +15,5 @@ Lorem ipsum dolor
 Check out (our documentation)[https://docs.example.com]
 Visit the (GitHub repository)[https://github.com/example/repo]
 Contact us at (support@example.com)[mailto:support@example.com]
+
+[ Visit our website](https://example.com)
