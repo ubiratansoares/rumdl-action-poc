@@ -21,8 +21,6 @@ jobs:
 
       - name: Lint with rumdl
         uses: ubiratansoares/rumdl@ufs/rumdl-action
-        with:
-          report-type: sarif
 
   lint-workflow-annotations:
     runs-on: macos-15
@@ -43,3 +41,5 @@ jobs:
 
       - name: Lint with rumdl
         uses: ubiratansoares/rumdl@ufs/rumdl-action
+        with:
+          report-type: sarif
